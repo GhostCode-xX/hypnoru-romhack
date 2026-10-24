@@ -3,7 +3,6 @@
   "name": "AlpPalletTown",
   "layout": "LAYOUT_ALP_PALLET_TOWN",
   "music": "MUS_RG_PALLET",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_PALLET_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -22,7 +21,17 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ID_ALPHA_PALLET",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_PALLET_TOWN",
+      "dest_warp_id": "WARP_ID_ORIGINAL_PALLET"
+    }
+  ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_KANTO"
 }

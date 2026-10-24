@@ -21,12 +21,21 @@
     },
     {
       "map": "MAP_ALP_ROUTE_22",
-      "offset": 0,
+      "offset": 22,
       "direction": "left"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ID_VIRIDIAN_SOUTH",
+      "x": 44,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_ALP_ROUTE_1",
+      "dest_warp_id": "WARP_ID_1NORTH"
+    }
+  ],
   "coord_events": [],
   "bg_events": [],
   "region": "REGION_KANTO"

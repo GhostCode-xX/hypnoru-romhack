@@ -3,7 +3,6 @@
   "name": "AlpRoute1",
   "layout": "LAYOUT_ALP_ROUTE_1",
   "music": "MUS_RG_ROUTE1",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -27,7 +26,17 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ID_1NORTH",
+      "x": 12,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_ALP_VIRIDIAN_CITY",
+      "dest_warp_id": "WARP_ID_VIRIDIAN_SOUTH"
+    }
+  ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [],
+  "region": "REGION_KANTO"
 }

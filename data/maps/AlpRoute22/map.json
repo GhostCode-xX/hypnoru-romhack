@@ -16,12 +16,21 @@
   "connections": [
     {
       "map": "MAP_ALP_VIRIDIAN_CITY",
-      "offset": 0,
+      "offset": -22,
       "direction": "right"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ID_22ENTRANCE",
+      "x": 8,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_ALP_ROUTE26_CROSSROAD",
+      "dest_warp_id": "WARP_ID_EASTCROSS"
+    }
+  ],
   "coord_events": [],
   "bg_events": [],
   "region": "REGION_KANTO"

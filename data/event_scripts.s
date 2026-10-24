@@ -1742,3 +1742,15 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wild_encounter.inc"
+
+	.include "data/maps/AlpRoute26_Crossroad/scripts.inc"
+	.include "data/maps/AlpRoute26_Crossroad/text.inc"
+
+	.include "data/maps/AlpRoute27/scripts.inc"
+	.include "data/maps/AlpRoute27/text.inc"
+
+	.include "data/maps/AlrNewBarkTown/scripts.inc"
+	.include "data/maps/AlrNewBarkTown/text.inc"
+
+	.include "data/maps/AlpRoute26/scripts.inc"
+	.include "data/maps/AlpRoute26/text.inc"

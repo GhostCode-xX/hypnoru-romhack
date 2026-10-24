@@ -1,0 +1,39 @@
+{
+  "id": "MAP_ALP_ROUTE26_CROSSROAD",
+  "name": "AlpRoute26_Crossroad",
+  "layout": "LAYOUT_ALP_ROUTE26_CROSSROAD_LAYOUT",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ROUTE_26",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ID_EASTCROSS",
+      "x": 22,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ALP_ROUTE_22",
+      "dest_warp_id": "WARP_ID_22ENTRANCE"
+    },
+    {
+      "warp_id": "WARP_ID_SOUTHCROSS",
+      "x": 11,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ALP_ROUTE26",
+      "dest_warp_id": "WARP_ID_26ENTRANCE"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "region": "REGION_KANTO"
+}
