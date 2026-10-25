@@ -23,12 +23,11 @@
   "object_events": [],
   "warp_events": [
     {
-      "warp_id": "WARP_ID_26ENTRANCE",
       "x": 13,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ALP_ROUTE26_CROSSROAD",
-      "dest_warp_id": "WARP_ID_SOUTHCROSS"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

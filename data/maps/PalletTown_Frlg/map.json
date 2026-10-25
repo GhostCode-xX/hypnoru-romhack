@@ -95,12 +95,11 @@
       "dest_warp_id": "0"
     },
     {
-      "warp_id": "WARP_ID_ORIGINAL_PALLET",
       "x": 3,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_ALP_PALLET_TOWN",
-      "dest_warp_id": "WARP_ID_ALPHA_PALLET"
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

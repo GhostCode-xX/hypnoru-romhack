@@ -17,20 +17,18 @@
   "object_events": [],
   "warp_events": [
     {
-      "warp_id": "WARP_ID_EASTCROSS",
       "x": 22,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_ALP_ROUTE_22",
-      "dest_warp_id": "WARP_ID_22ENTRANCE"
+      "dest_warp_id": "0"
     },
     {
-      "warp_id": "WARP_ID_SOUTHCROSS",
       "x": 11,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_ALP_ROUTE26",
-      "dest_warp_id": "WARP_ID_26ENTRANCE"
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
