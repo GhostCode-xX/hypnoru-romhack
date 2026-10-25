@@ -29,11 +29,24 @@ $(MAPS_OUTDIR)/%/header.inc $(MAPS_OUTDIR)/%/events.inc $(MAPS_OUTDIR)/%/connect
 	$(MAPJSON) map emerald $< $(LAYOUTS_DIR)/layouts.json $(@D)
 
 
-$(MAPS_OUTDIR)/connections.inc $(MAPS_OUTDIR)/groups.inc $(MAPS_OUTDIR)/events.inc $(MAPS_OUTDIR)/headers.inc $(INCLUDECONSTS_OUTDIR)/map_groups.h $(DATA_SRC_SUBDIR)/map_group_count.h: $(MAPS_DIR)/map_groups.json $(MAP_JSONS) .map_version $(MAPJSON)
+# NOTE: this recipe produces all 6 targets below from a single mapjson invocation.
+# It MUST use the grouped-target operator (&:, GNU Make >= 4.3) instead of a plain
+# ':'. With a plain ':' and parallel builds (-j), Make can treat each target as if it
+# had its OWN copy of this recipe and launch `mapjson groups` more than once at the
+# same time (e.g. once because maps.o needs headers.inc/groups.inc, and again because
+# map_events.o needs events.inc, before Make realizes they're the same rule). Two
+# concurrent, uncoordinated writers to the same 6 output files can interleave/truncate
+# each other's output, silently corrupting map_groups.h or groups.inc with data from
+# the wrong run -- with no compile error, since the resulting .inc is still syntactically
+# valid, just wrong (e.g. a warp's destination map constant ends up stale/mismatched).
+# '&:' tells Make these targets come from one atomic recipe, which fixes this regardless
+# of -j.
+$(MAPS_OUTDIR)/connections.inc $(MAPS_OUTDIR)/groups.inc $(MAPS_OUTDIR)/events.inc $(MAPS_OUTDIR)/headers.inc $(INCLUDECONSTS_OUTDIR)/map_groups.h $(DATA_SRC_SUBDIR)/map_group_count.h &: $(MAPS_DIR)/map_groups.json $(MAP_JSONS) .map_version $(MAPJSON)
 	@$(MAPJSON) groups $(MAP_VERSION) $(filter %.json,$^) $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)
 	@echo "$(MAPJSON) groups $(MAP_VERSION) $(MAPS_DIR)/map_groups.json <MAP_JSONS> $(MAPS_OUTDIR) $(INCLUDECONSTS_OUTDIR)"
 
-$(LAYOUTS_OUTDIR)/layouts.inc $(LAYOUTS_OUTDIR)/layouts_table.inc $(INCLUDECONSTS_OUTDIR)/layouts.h: $(LAYOUTS_DIR)/layouts.json .map_version $(MAPJSON)
+# Same race condition as above: 3 outputs from 1 mapjson invocation, needs '&:'.
+$(LAYOUTS_OUTDIR)/layouts.inc $(LAYOUTS_OUTDIR)/layouts_table.inc $(INCLUDECONSTS_OUTDIR)/layouts.h &: $(LAYOUTS_DIR)/layouts.json .map_version $(MAPJSON)
 	$(MAPJSON) layouts $(MAP_VERSION) $< $(LAYOUTS_OUTDIR) $(INCLUDECONSTS_OUTDIR)
 
 # Generate constants for map events, which depend on data that's distributed across the map.json files.
