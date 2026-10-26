@@ -2,7 +2,7 @@
   "id": "MAP_ALP_ROUTE27",
   "name": "AlpRoute27",
   "layout": "LAYOUT_ALP_ROUTE27_LAYOUT",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_ROUTE3",
   "region_map_section": "MAPSEC_ROUTE_27",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
